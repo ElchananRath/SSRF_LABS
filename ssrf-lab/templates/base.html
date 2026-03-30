@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRF Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SSRF Lab</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/level1">Level 1</a>
+            <a href="/level2">Level 2</a>
+            <a href="/level3">Level 3</a>
+            <a href="/level4">Level 4</a>
+            <a href="/level5">Level 5</a>
+        </nav>
+
+        <hr>
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

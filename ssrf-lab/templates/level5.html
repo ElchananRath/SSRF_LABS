@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Level 5 - SSRF + RCE</h2>
+<p>Enter a path for the server to fetch inside the lab environment.</p>
+<p>The lab need to print 67 and you cant write 67 in the file.</p>
+
+<form method="POST">
+    <input type="text" name="url" placeholder="file:///C:/path/to/file.txt" required>
+    <button type="submit">Submit</button>
+</form>
+
+{% if result %}
+    <div class="result">
+        <p>{{ result }}</p>
+    </div>
+{% endif %}
+
+{% if result_status %}
+    <div class="result">
+        <p>
+            {% if result_status == "success" %}
+                Success!
+            {% else %}
+                Try again.
+            {% endif %}
+        </p>
+        {% if result_status == "success" %}
+            <img src="{{ url_for('static', filename='images/happy_face.svg') }}" alt="Happy face">
+        {% else %}
+            <img src="{{ url_for('static', filename='images/sad_face.svg') }}" alt="Sad face">
+        {% endif %}
+    </div>
+{% endif %}
+{% endblock %}
