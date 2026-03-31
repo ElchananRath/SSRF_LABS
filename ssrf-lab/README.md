@@ -1,6 +1,6 @@
-# SSRF Lab (intentionally vulnerable)
+# SSRF Lab
 
-This is a small SSRF training lab with multiple levels. **Security issues are intentional** so you can practice exploitation in a safe local environment.
+This is a small SSRF training lab with multiple levels. practice exploitation in a safe local environment.
 
 ## Quick start
 
@@ -37,5 +37,4 @@ Then open `http://127.0.0.1:5000/`.
 ## Notes
 
 - Flag files live in `static/flags/`.
-- Level 3 wordlist uses `file://` URIs built via `pathlib.Path.as_uri()` to work on both Windows and Linux.
 
