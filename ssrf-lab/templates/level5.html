@@ -27,6 +27,11 @@
         </p>
         {% if result_status == "success" %}
             <img src="{{ url_for('static', filename='images/happy_face.svg') }}" alt="Happy face">
+            <aside class="lesson-learned">
+                <h3>Takeaway</h3>
+                <p>SSRF is not always the end state. When fetched content is passed into a <strong>template engine</strong>, log renderer, PDF generator, or other “string becomes code” layer, you can chain into <strong>Server-Side Template Injection (SSTI)</strong> and often achieve <strong>remote code execution</strong>.</p>
+                <p>The combined pattern—untrusted fetch plus unsafe render—is a severity multiplier: the same SSRF that looked like “read-only” cross-origin access becomes a path to execute logic on the server.</p>
+            </aside>
         {% else %}
             <img src="{{ url_for('static', filename='images/sad_face.svg') }}" alt="Sad face">
         {% endif %}

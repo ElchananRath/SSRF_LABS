@@ -28,6 +28,11 @@
         </p>
         {% if result_status == "success" %}
             <img src="{{ url_for('static', filename='images/happy_face.svg') }}" alt="Happy face">
+            <aside class="lesson-learned">
+                <h3>Takeaway</h3>
+                <p>When the application does not reflect the full response—or omits useful error detail—direct confirmation of SSRF can be hard. <strong>Out-of-band (OOB)</strong> interaction is a standard answer: coerce the vulnerable server to issue a DNS query or HTTP(S) request to infrastructure you control, then correlate the hit with your exploit attempt.</p>
+                <p>OOB techniques are widely used for blind SSRF, SSRF-to-internal pivoting, and mapping reachability where inline output is unavailable or filtered.</p>
+            </aside>
         {% else %}
             <img src="{{ url_for('static', filename='images/sad_face.svg') }}" alt="Sad face">
         {% endif %}

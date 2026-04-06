@@ -29,6 +29,11 @@
         </p>
         {% if result_status == "success" %}
             <img src="{{ url_for('static', filename='images/happy_face.svg') }}" alt="Happy face">
+            <aside class="lesson-learned">
+                <h3>Takeaway</h3>
+                <p>URL and scheme validation is easy to get wrong. Naïve substring checks, case folding, decoding order, and parser inconsistencies often let a payload slip through after a minor transformation—exactly what attackers automate.</p>
+                <p>Defense in depth means parsing with a single canonical model, validating against an explicit allowlist of hosts/schemes/ports, and refusing to “helpfully” rewrite user input in ways that undo your own checks.</p>
+            </aside>
         {% else %}
             <img src="{{ url_for('static', filename='images/sad_face.svg') }}" alt="Sad face">
         {% endif %}

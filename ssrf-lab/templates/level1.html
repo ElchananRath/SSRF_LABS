@@ -29,6 +29,11 @@
         </p>
         {% if result_status == "success" %}
             <img src="{{ url_for('static', filename='images/happy_face.svg') }}" alt="Happy face">
+            <aside class="lesson-learned">
+                <h3>Takeaway</h3>
+                <p>A server-side request primitive is not limited to remote <code>http(s)</code> endpoints. Depending on how the backend resolves URLs and which schemes it allows, the same code path can read <strong>local resources</strong> on the machine that performs the fetch—for example via <code>file://</code> URIs or other scheme handlers the client stack understands.</p>
+                <p>In production, treat user-controlled URLs as a trust boundary: enforce strict allowlists, block dangerous schemes, use network egress controls, and separate fetchers that must reach internal assets from those that face untrusted input.</p>
+            </aside>
         {% else %}
             <img src="{{ url_for('static', filename='images/sad_face.svg') }}" alt="Sad face">
         {% endif %}

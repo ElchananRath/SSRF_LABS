@@ -37,3 +37,29 @@ button {
     background: #eef;
     border-radius: 8px;
 }
+
+.lesson-learned {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: #f8f9fa;
+    border-left: 4px solid #0d6efd;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #212529;
+}
+
+.lesson-learned h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0c5460;
+}
+
+.lesson-learned p {
+    margin: 0 0 0.65rem 0;
+}
+
+.lesson-learned p:last-child {
+    margin-bottom: 0;
+}

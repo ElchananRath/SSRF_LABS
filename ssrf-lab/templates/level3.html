@@ -40,6 +40,11 @@
         </p>
         {% if result_status == "success" %}
             <img src="{{ url_for('static', filename='images/happy_face.svg') }}" alt="Happy face">
+            <aside class="lesson-learned">
+                <h3>Takeaway</h3>
+                <p>Classic SSRF often returns response bodies you can read. <strong>Blind SSRF</strong> does not—but you can still learn facts about the target environment using <strong>observable side effects</strong>: latency differences, error classes, connection timing, cache behavior, or out-of-band callbacks.</p>
+                <p>This level illustrates a simple <strong>time-based oracle</strong>: subtle timing shifts can indicate whether a path was hit, enabling filesystem or service discovery even when content never reaches the browser.</p>
+            </aside>
         {% else %}
             <img src="{{ url_for('static', filename='images/sad_face.svg') }}" alt="Sad face">
         {% endif %}
